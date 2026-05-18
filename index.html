@@ -1,0 +1,126 @@
+export default function PuirtBastDashboard() { const cards = [ { title: 'Total Pengguna', value: '12,450', icon: '👥' }, { title: 'Pendapatan', value: 'Rp 48.5JT', icon: '💰' }, { title: 'Pesanan', value: '1,284', icon: '📦' }, { title: 'Aktif Hari Ini', value: '842', icon: '⚡' }, ];
+
+const activities = [ 'Pengguna baru berhasil mendaftar', 'Pesanan premium telah diproses', 'Server dashboard berjalan stabil', 'Update sistem berhasil dilakukan', ];
+
+return ( <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-red-950 text-white"> {/* Navbar */} <header className="flex items-center justify-between px-8 py-5 border-b border-white/10 backdrop-blur-md bg-black/30 sticky top-0 z-50"> <div> <h1 className="text-3xl font-black tracking-widest text-red-500 drop-shadow-lg"> PUIRT BAST </h1> <p className="text-sm text-zinc-400">Modern Dashboard System</p> </div>
+
+<nav className="hidden md:flex gap-6 text-sm font-medium text-zinc-300">
+      <a href="#" className="hover:text-red-400 transition">Dashboard</a>
+      <a href="#" className="hover:text-red-400 transition">Analytics</a>
+      <a href="#" className="hover:text-red-400 transition">Users</a>
+      <a href="#" className="hover:text-red-400 transition">Settings</a>
+    </nav>
+
+    <button className="px-5 py-2 rounded-2xl bg-red-600 hover:bg-red-500 transition font-semibold shadow-lg shadow-red-500/30">
+      Login
+    </button>
+  </header>
+
+  {/* Hero */}
+  <section className="px-8 md:px-16 py-14 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 className="text-5xl md:text-6xl font-black leading-tight">
+        Dashboard <span className="text-red-500">Puirt Bast</span>
+      </h2>
+      <p className="mt-6 text-zinc-300 text-lg leading-relaxed max-w-xl">
+        Website dashboard modern dengan tampilan futuristik, cepat, dan responsif untuk kebutuhan monitoring data, statistik, dan manajemen sistem.
+      </p>
+
+      <div className="mt-8 flex gap-4 flex-wrap">
+        <button className="px-6 py-3 rounded-2xl bg-red-600 hover:bg-red-500 transition font-bold shadow-xl shadow-red-500/40">
+          Mulai Sekarang
+        </button>
+        <button className="px-6 py-3 rounded-2xl border border-zinc-600 hover:border-red-500 hover:text-red-400 transition">
+          Pelajari
+        </button>
+      </div>
+    </div>
+
+    <div className="relative">
+      <div className="absolute inset-0 bg-red-600 blur-3xl opacity-20 rounded-full"></div>
+      <div className="relative bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl">
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-xl font-bold">Live Statistics</h3>
+          <span className="text-green-400 text-sm">● Online</span>
+        </div>
+
+        <div className="space-y-4">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between bg-black/30 rounded-2xl px-5 py-4 border border-white/5 hover:border-red-500/30 transition"
+            >
+              <div className="flex items-center gap-4">
+                <div className="text-3xl">{card.icon}</div>
+                <div>
+                  <p className="text-zinc-400 text-sm">{card.title}</p>
+                  <h4 className="text-xl font-bold">{card.value}</h4>
+                </div>
+              </div>
+              <div className="text-green-400 text-sm font-semibold">+12%</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Feature Section */}
+  <section className="px-8 md:px-16 pb-16">
+    <h3 className="text-3xl font-black mb-8">Fitur Utama</h3>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-red-500/40 transition">
+        <h4 className="text-2xl font-bold mb-3">Realtime Data</h4>
+        <p className="text-zinc-400 leading-relaxed">
+          Monitoring statistik dan aktivitas pengguna secara langsung dengan tampilan modern.
+        </p>
+      </div>
+
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-red-500/40 transition">
+        <h4 className="text-2xl font-bold mb-3">Responsive UI</h4>
+        <p className="text-zinc-400 leading-relaxed">
+          Desain responsif yang tetap nyaman digunakan di HP, tablet, maupun desktop.
+        </p>
+      </div>
+
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-red-500/40 transition">
+        <h4 className="text-2xl font-bold mb-3">Fast Performance</h4>
+        <p className="text-zinc-400 leading-relaxed">
+          Dibangun dengan struktur ringan agar loading cepat dan performa tetap stabil.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Activity Section */}
+  <section className="px-8 md:px-16 pb-20">
+    <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-3xl font-black">Aktivitas Terbaru</h3>
+        <button className="text-red-400 hover:text-red-300 transition">
+          Lihat Semua
+        </button>
+      </div>
+
+      <div className="space-y-4">
+        {activities.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-4 bg-black/30 rounded-2xl px-5 py-4 border border-white/5"
+          >
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <p className="text-zinc-300">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="border-t border-white/10 py-6 text-center text-zinc-500 text-sm">
+    © 2026 Puirt Bast Dashboard — All Rights Reserved.
+  </footer>
+</div>
+
+); }
